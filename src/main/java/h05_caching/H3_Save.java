@@ -8,18 +8,19 @@ import org.hibernate.cfg.Configuration;
 
 /*
 Transient Object: Eğer bir nesne Javada  oluşturulup henüz herhangi bir Hibernate session'ı 
-ile ilişkilendirilmez ise bu nesnelere Transient nesne denilir.  
+ile ilişkilendirilmez ise bu nesnelere Transient nesne denilir.  TRANSPARAN
      ÖRNEĞİN: Constructor ile POJO nesnesini oluşturup session.save() ile kaydetmez isek       
 */
 
 /*
 Persistent Object: Eğer oluşturulan bir nesne, bir session ile ilişkilendirilir ise 
-bu nesneye "Persistent Object" denilir. 
+bu nesneye "Persistent Object" denilir. KALICI OBJE
 ORNEGIN: session.save() 
 */
 
 /*
 Detached Object: Eğer nesneler ile ilişkili bir session kapatılırsa bu nesnelere "Detached Object" denilir.
+
 */
 
 /*

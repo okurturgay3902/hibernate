@@ -62,13 +62,40 @@ public class H4_Fetch {
 	
 	*/
 		//hql ile tüm kitapları silelim
-		
+		/*
 		int sayi=	session.createQuery("DELETE FROM H2_Kitap").executeUpdate();
 			
 				System.out.println(sayi);
+		*/		
+				
+	//--------------------------------------------------------------------------
+	//  LAZY(tembel: sadece istenen) FETCH VS EAGER(ac gozlu: butun baglari dolasir) FETCH  
+	//------------------------------------------------------------------------
+				
+	/* 
+	 *  Hibernate veritabanından verileri cekerken AC GOZLU(EAGER) veya TEMBEL(LAZY) olabilmektedir. 
+	 *  EAGER Fetch isleminde bir tablodan veri cekilmesi istendiginde Hibernate o tablo ile iliskili
+	 *  Tum tablolari da getirir. 
+	 *  
+	 *  Eger LAZY fetch islemi kullanilirsa sadece istenilen tablonun verileri getirilir. 
+	 * 
+	 *  2 yontemin de avantajlari ve dezavatanjlari vardir. Tercih, uygulanin gereksinimlerine gore belirlenir.  
+	 * 
+	 *  LAZY fetch gereksiz verilerin cekilmemesini saglamak icin ve daha dusuk bellek kullanimi icin daha elvereslidir. 
+	 *  Ancak, zamana duyarlı uygulamalarda problem olusturuabilir. iliskili verilerin tek tek veritabnindan getirilmesi
+	 *  zaman kayıolarina yol acabilir. 
+	 * 
+	 *  EAGER fetch ise bazen kullanimayacak veriler bastan pesin pesin getirilmesine yol acabilir.
+	 *   
+	 */
+				
+		 
+		System.out.println(session.get(H1_Ogrenci.class, 333));
 		
 		
 	tx.commit();
+	sf.close();
+	session.close();
 	}
 
 }
