@@ -54,6 +54,57 @@ public class H3_Save {
 	
 	
 	
+	/*
+	 * *****coklu baglama*******
+	
+	@Entity
+	@Table(name = "users")
+	public class Users {
+	            
+	    @Id
+	    @Column(name = "idusers")
+	    private int idusers;
+	       
+	    @OneToMany(mappedBy="idusers")
+	    private Set<Accounts> accounts;
+	    ...
+	}
+	*********************
+	@Entity
+	@Table(name = "accounts")
+	public class Accounts {
+	    
+	    @Id
+	   
+	    @Column(name = "idaccounts")
+	    private int idaccounts;
+	   
+	    @ManyToOne
+	    @JoinColumn(name="idusers")
+	    private Users idusers;
+
+	    @OneToMany(mappedBy="idaccounts")
+	    private Set<Transacs> transacs;
+	    ...
+	}
+	*************
+	@Entity
+	@Table(name = "transacs")
+	public class Transacs {
+	    
+	    @Id
+	    
+	    @Column(name = "idtransacs")
+	    private int idtransacs;
+
+	    @ManyToOne
+	    @JoinColumn(name="idaccounts")
+	    private Accounts idaccounts;
+	    ....
+	}
+	
+	*/
+	
 	tx.commit();
 	}
 
